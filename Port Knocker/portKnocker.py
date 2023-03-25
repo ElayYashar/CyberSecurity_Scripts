@@ -1,11 +1,14 @@
 import os
 import socket
+import sys
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-IP = "10.0.0.17"
+# Enters the the IP after the file name 
+IP = argv[1]
 SSH = 22
 target_ip = socket.gethostbyname(IP)
-ports = [10000 ,4444 ,65535]
+# Enters the ports after the IP
+ports = [argv[2] ,argv[3] ,argv[4]]
 
 def knock(arr):
     for p in ports:
